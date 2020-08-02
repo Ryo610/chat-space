@@ -1,10 +1,13 @@
-## groups_usersテーブル
+#　DB設計
+
+## users_table
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|name|string|index: true, null: false, unique: true|
+|mail|string|null: false|
 
 ### Association
-- belongs_to :group
-- belongs_to :user
+_ has_many :groups, through: memberes
+_ has_many :messages
+_ has_many :members

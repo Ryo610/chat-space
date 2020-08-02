@@ -1,6 +1,6 @@
 #　DB設計
 
-## users_table
+## users table
 
 |Column|Type|Options|
 |------|----|-------|
@@ -8,6 +8,6 @@
 |mail|string|null: false|
 
 ### Association
-_ has_many :groups, through: memberes
-_ has_many :messages
-_ has_many :members
+- has_many :groups, through: memberes
+- has_many :messages
+- has_many :members

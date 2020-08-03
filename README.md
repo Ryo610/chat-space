@@ -28,22 +28,22 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
-|images|string|null: false|
-|group_id|integur|null: false|
-|user_id|integur|null: false|
+|body|text||
+|image|string||
+|group_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 
 ### Association
-- has_many :groups
-- has_many :users
+- belongs_to :groups
+- belongs_to :users
 
 ## users_groupes table
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|mail|string|null: false|
+|group_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 
 ### Association
-- has_many :groups
-- has_many :users
+- belongs_to :groups
+- belongs_to :users

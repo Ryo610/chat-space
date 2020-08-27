@@ -7,7 +7,7 @@
         Member:kari
   
     .main-chat__group-info__edit-botton_chalacter
-      %a{href: '#'}
+      = link_to "#" do
         Edit
   .main-chat__list
     .message
@@ -31,7 +31,7 @@
       .Form__input
         %input.Input-form{placeholder: "type a message"}
         .Form__input__picture
-          %link_to{ href:  '#'}
+          = link_to "#" do
             = icon('far', 'image')
       .Form__send
         Send

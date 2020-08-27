@@ -1,0 +1,37 @@
+.main-chat
+  .main-chat__group-info
+    .main-chat__group-info__karioki
+      .main-chat__group-info__karioki__test
+        test
+      .main-chat__group-info__karioki__member-name
+        Member:kari
+  
+    .main-chat__group-info__edit-botton_chalacter
+      = link_to "#" do
+        Edit
+  .main-chat__list
+    .message
+      .message__karioki
+        .message__karioki2__name
+          kari
+        .message__karioki2__date
+          2020/8/25
+      .message__content
+        メッセージ
+    .message
+      .message__karioki
+        .message__karioki2__name
+          kari
+        .message__karioki2__date
+          2020/8/25
+      .message__content
+        メッセージ
+  .main-chat__message-form
+    %form.Form
+      .Form__input
+        %input.Input-form{placeholder: "type a message"}
+        .Form__input__picture
+          = link_to "#" do
+            = icon('far', 'image')
+      .Form__send
+        Send

@@ -2,36 +2,24 @@
   .main-chat__group-info
     .main-chat__group-info__karioki
       .main-chat__group-info__karioki__test
-        test
-      .main-chat__group-info__karioki__member-name
-        Member:kari
+        = @group.name
+      .main-chat__group-info__karioki__member
+        Member:
+        .main-chat__group-info__karioki__member-name
+          - @group.users.each do|user|
+            = user.name
   
     .main-chat__group-info__edit-botton_chalacter
-      = link_to "#" do
+      = link_to edit_group_path(@group) do
         Edit
   .main-chat__list
-    .message
-      .message__karioki
-        .message__karioki2__name
-          kari
-        .message__karioki2__date
-          2020/8/25
-      .message__content
-        メッセージ
-    .message
-      .message__karioki
-        .message__karioki2__name
-          kari
-        .message__karioki2__date
-          2020/8/25
-      .message__content
-        メッセージ
+    = render @messages
   .main-chat__message-form
-    %form.Form
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
       .Form__input
-        %input.Input-form{placeholder: "type a message"}
-        .Form__input__picture
-          = link_to "#" do
-            = icon('far', 'image')
-      .Form__send
-        Send
+        = f.text_field :content, class: 'Form__input__inputContent', placeholder: 'type a message'
+        = f.label :image, class: 'Form__input__inputImage' do
+          = icon('far', 'image', class: 'Form__input__icon')
+          = f.file_field :image, class: 'Hidden'
+      = f.submit 'Send', class: 'Form__submit'
+
